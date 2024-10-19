@@ -2,6 +2,8 @@ import "./App.css";
 import { NavBar } from "./components/Navbar.jsx";
 import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
+import { MailboxList } from "./components/MailboxList.jsx";
+import { MailboxDetails } from "./components/MailboxDetails.jsx";
 
 const initialState = [
   { _id: 1, boxholder: "Alex", boxSize: "Small" },
@@ -33,9 +35,7 @@ const App = () => {
         ></Route>
         <Route
           path="/mailboxes"
-          element={
-            <h2>This will be for the mailboxlist. import will come later </h2>
-          }
+          element={<MailboxList mailboxes={mailboxes} />}
         ></Route>
         <Route
           path="/new-mailbox"
@@ -45,7 +45,7 @@ const App = () => {
         ></Route>
         <Route
           path="/mailboxes/:mailboxId"
-          element={<h2>This will be for the specific mailbox later. </h2>}
+          element={<MailboxDetails mailboxes={mailboxes} />}
         ></Route>
       </Routes>
     </>
