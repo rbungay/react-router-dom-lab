@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import { MailboxList } from "./components/MailboxList.jsx";
 import { MailboxDetails } from "./components/MailboxDetails.jsx";
+import MailboxForm from "./components/MailboxForm.jsx";
 
 const initialState = [
   { _id: 1, boxholder: "Alex", boxSize: "Small" },
@@ -39,9 +40,7 @@ const App = () => {
         ></Route>
         <Route
           path="/new-mailbox"
-          element={
-            <h2>This will be for the newMailbox. import will come later </h2>
-          }
+          element={<MailboxForm addBox={addBox} />}
         ></Route>
         <Route
           path="/mailboxes/:mailboxId"
